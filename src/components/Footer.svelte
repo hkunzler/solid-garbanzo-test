@@ -6,7 +6,7 @@
     <div class="container mx-auto px-4 sm:px-0">
         <div class="mb-6">
             <span class="text-primary font-semibold">Kunzler Technology</span>
-            <p>&copy; {currentYear} Your Company Name. All rights reserved.</p>
+            <p>&copy; {currentYear} Kunzler Technology, L.L.C.. All rights reserved.</p>
         </div>
         <nav class="mb-6">
             <ul class="flex space-x-6">
