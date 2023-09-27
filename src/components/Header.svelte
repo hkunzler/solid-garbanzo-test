@@ -1,6 +1,8 @@
 <script>
     import {onMount} from "svelte";
     import {fade, slide} from "svelte/transition";
+    import HamburgerMenu from "../assets/HamburgerMenu.svelte";
+    import CloseMenu from "../assets/CloseMenu.svelte";
 
     let isMobileMenuOpen = false;
     let activeSection = '';
@@ -49,57 +51,42 @@
         };
     });
 
-    const toggleMobileMenu = () => {
-        isMobileMenuOpen = !isMobileMenuOpen;
-    };
+    const toggleMobileMenu = () => isMobileMenuOpen = !isMobileMenuOpen;
 </script>
 
-<nav class="bg-gray-800 text-white p-4 w-full fixed top-0 z-50">
+<nav class="bg-white shadow-md p-4 w-full fixed top-0 z-50">
     <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-        <a href="#landing" class="text-primary font-semibold text-lg">Kunzler Technology</a>
-        <div class="hidden md:flex space-x-4">
-            <a href="#about" class="text-white hover:text-primary transition" class:active={activeSection === 'about'}>About
+        <a class="font-heading text-primary font-extrabold py-3 " href="#landing">Kunzler Technology</a>
+        <div class="hidden md:flex space-x-8">
+            <a class="link" href="#about" class:active={activeSection === 'about'}>About
                 Us</a>
-            <a href="#services" class="text-white hover:text-primary transition"
+            <a class="link" href="#services"
                class:active={activeSection === 'services'}>Services</a>
-            <a href="#contact" class="text-white hover:text-primary transition"
+            <a class="link" href="#contact"
                class:active={activeSection === 'contact'}>Contact</a>
         </div>
         <button
-                class="md:hidden text-white focus:outline-none"
+                class="md:hidden"
                 on:click={toggleMobileMenu}
         >
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                 xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
+            <HamburgerMenu/>
         </button>
     </div>
     {#if isMobileMenuOpen}
         <div class="fixed inset-0 bg-black bg-opacity-50 z-50" transition:fade on:click={toggleMobileMenu}></div>
-        <div class="bg-gray-800 py-2 w-64 fixed right-0 top-0 h-full overflow-auto z-50 shadow-lg"
+        <div class="bg-white flex flex-col py-2 w-64 fixed right-0 top-0 h-full overflow-auto z-50 shadow-lg"
              transition:slide="{{delay: 100, duration: 300}}">
             <div class="flex justify-end p-4">
-                <button class="text-white focus:outline-none p-4" on:click={toggleMobileMenu}>
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                         xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
+                <button class="p-4" on:click={toggleMobileMenu}>
+                    <CloseMenu/>
                 </button>
             </div>
-            <a href="#about" class="block px-4 py-2 text-white hover:text-primary transition"
+            <a href="#about" class="link p-8"
                class:active={activeSection === 'about'}>About Us</a>
-            <a href="#services" class="block px-4 py-2 text-white hover:text-primary transition"
+            <a href="#services" class="link  p-8"
                class:active={activeSection === 'services'}>Services</a>
-            <a href="#contact" class="block px-4 py-2 text-white hover:text-primary transition"
+            <a href="#contact" class="link  p-8"
                class:active={activeSection === 'contact'}>Contact</a>
         </div>
     {/if}
 </nav>
-
-<style>
-    a.active {
-        border-bottom: 2px solid white;
-    }
-</style>

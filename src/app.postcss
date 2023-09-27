@@ -3,10 +3,52 @@
 @tailwind components;
 @tailwind utilities;
 
+h1 {
+    @apply font-heading text-5xl font-extrabold mb-4;
+}
+
+h2 {
+    @apply font-heading text-4xl font-extrabold mb-12 text-primary;
+}
+
+h3 {
+    @apply font-heading text-2xl mb-8;
+}
+
+div > .buttonLink {
+    @apply font-body text-lg px-6 py-3 bg-primary text-white rounded-full shadow-md hover:bg-primary-dark transition mt-12 inline-block;
+}
+
+.link {
+    @apply font-body text-lg py-3 text-primary;
+}
+
+.link.active {
+    color: #075099FF;
+    font-weight: bold;
+}
+
+.link:hover {
+    color: #075099FF;
+    border-bottom: 2px solid #075099FF;
+}
+
+p, span {
+    @apply font-body text-lg mb-12;
+}
+
+section {
+    @apply py-20 min-h-50vh px-8;
+}
+
+svg {
+     @apply mb-12 w-8 h-8 mr-3 text-accent stroke-current;
+}
+
 .bg-primary {
-    background-color: #1a202c;
+    background-color: #0a66c2;
 }
 
 .hover\:bg-primary-dark:hover {
-    background-color: #171923;
+    background-color: #075099FF;
 }
