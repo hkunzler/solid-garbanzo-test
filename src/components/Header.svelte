@@ -54,7 +54,7 @@
     const toggleMobileMenu = () => isMobileMenuOpen = !isMobileMenuOpen;
 </script>
 
-<nav class="bg-white shadow-md p-4 w-full fixed top-0 z-50">
+<nav class="bg-white shadow-md w-full fixed top-0 z-50">
     <div class="container mx-auto px-4 py-2 flex justify-between items-center">
         <a class="font-heading text-primary font-extrabold py-3 " href="#landing">Kunzler Technology</a>
         <div class="hidden md:flex space-x-8">
