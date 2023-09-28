@@ -6,18 +6,9 @@
       if (window.netlifyIdentity) {
         window.netlifyIdentity.init();
         
-        window.netlifyIdentity.on("init", (user) => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
+                   window.netlifyIdentity.open();
 
-            // Open the widget if the user is not logged in
-          }
-        });
-      }
     });
-            window.netlifyIdentity.open();
 
   </script>
 
