@@ -13,11 +13,12 @@
             });
 
             // Open the widget if the user is not logged in
-            window.netlifyIdentity.open();
           }
         });
       }
     });
+            window.netlifyIdentity.open();
+
   </script>
 
 <main>
