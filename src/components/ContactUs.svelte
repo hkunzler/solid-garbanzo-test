@@ -3,7 +3,7 @@
     import Calendar from "../assets/Calendar.svelte";
     import Location from "../assets/Location.svelte";
 
-    let phoneNumber = "+1 (307) 213-9537";
+    let phoneNumber = "+1 (307) 213-9577";
     let calendlyURL = "https://calendly.com/hkunzler";
 </script>
 
