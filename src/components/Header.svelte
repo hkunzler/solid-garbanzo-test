@@ -64,6 +64,7 @@
                class:active={activeSection === 'services'}>Services</a>
             <a class="link" href="#contact"
                class:active={activeSection === 'contact'}>Contact</a>
+            <div data-netlify-identity-menu></div>
         </div>
         <button
                 class="md:hidden"
