@@ -9,16 +9,21 @@
     import Services from '../components/Services.svelte';
 
     onMount(() => {
-        if (window.netlifyIdentity) {
-          window.netlifyIdentity.on("init", (user) => {
-            if (!user) {
-              window.netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-              });
-            }
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.init();
+      
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
           });
+
+          // Open the widget if the user is not logged in
+          window.netlifyIdentity.open();
         }
       });
+    }
+  });
 </script>
 <Header/>
 <Landing/>
