@@ -4,6 +4,6 @@
 </script>
 
 <main>
-  <h1>Admin Page</h1>
-  <!-- Admin content goes here -->
+              <div data-netlify-identity-menu></div>
+
 </main>
