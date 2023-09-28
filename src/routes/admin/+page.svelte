@@ -8,7 +8,7 @@
         
                    window.netlifyIdentity.open();
 
-    });
+    }});
 
   </script>
 
